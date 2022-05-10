@@ -74,9 +74,7 @@ func NewBatchConsumer(serverUrl, project, user, sk string) (Consumer, error) {
 }
 
 // NewBatchConsumerWithBatchSize 创建指定批量发送条数的 BatchConsumer
-// serverUrl 接收端地址
-// appId 项目的 APP ID
-// batchSize 批量发送条数
+
 func NewBatchConsumerWithBatchSize(serverUrl, project, user, sk string, batchSize int) (Consumer, error) {
 	config := BatchConfig{
 		ServerUrl: serverUrl,
@@ -90,9 +88,7 @@ func NewBatchConsumerWithBatchSize(serverUrl, project, user, sk string, batchSiz
 }
 
 // NewBatchConsumerWithCompress 创建指定压缩形式的 BatchConsumer
-// serverUrl 接收端地址
-// appId 项目的 APP ID
-// compress 是否压缩数据
+
 func NewBatchConsumerWithCompress(serverUrl, project, user, sk string, compress bool) (Consumer, error) {
 	config := BatchConfig{
 		ServerUrl: serverUrl,
@@ -105,6 +101,7 @@ func NewBatchConsumerWithCompress(serverUrl, project, user, sk string, compress 
 }
 
 //创建指定配置的BatchConsumer
+
 func NewBatchConsumerWithConfig(config BatchConfig) (Consumer, error) {
 	return initBatchConsumer(config)
 }
